@@ -1,5 +1,10 @@
 name: 03-workflow runners
+<<<<<<< HEAD:03-workflow-runners.yml
 on: workflow_dispatch
+=======
+on:
+    workflow_dispatch:
+>>>>>>> d6c52c4df6f958e577a3da7d7e991fafd933d674:.github/workflows/03-workflow-runners.yml
 
 jobs:
     ubuntu-echo:
