@@ -1,7 +1,10 @@
 name: 01-Buidling Blocks
 on:
     workflow_dispatch:
-
+    pull_request:
+    schedule:
+      - cron: '*/5 * * * *'
+      
 jobs:
     echo-hello:
         runs-on: ubuntu-latest
