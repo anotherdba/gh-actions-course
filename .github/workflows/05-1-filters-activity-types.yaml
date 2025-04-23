@@ -9,4 +9,4 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "running whenever a PR is opened or sychronized AND base branch is main"
+      - run: echo "Running whenever a PR is opened or sychronized AND base branch is main"
