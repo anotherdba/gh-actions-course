@@ -13,7 +13,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}  
 
     - run:
-        az webapp list --query
+        az vm list
 
     # Azure logout   
     - name: logout  
