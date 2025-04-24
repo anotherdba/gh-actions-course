@@ -14,7 +14,7 @@ jobs:
 
     - uses: azure/sql-action@v1  
       with:  
- 
+       server-name: '132.196.24.148' 
        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}  
        sql-file: './createdb.sql'  
 
