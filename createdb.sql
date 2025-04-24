@@ -1,1 +1,1 @@
-create database testdb1
+create database testdb2
