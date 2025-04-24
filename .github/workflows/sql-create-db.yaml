@@ -5,15 +5,19 @@ on:
   
 jobs:  
   build:  
-   runs-on: windows-latest  
+   runs-on: ubuntu-latest  
    steps:  
     - uses: actions/checkout@v1  
     - uses: azure/login@v1  
       with:  
         creds: ${{ secrets.AZURE_CREDENTIALS }}  
 
-    - run:
-        az vm list
+    - uses: azure/sql-action@v1  
+      with:  
+       server-name: '132.196.24.148'  
+       connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}  
+       sql-file: './createdb.sql'  
+
 
     # Azure logout   
     - name: logout  
