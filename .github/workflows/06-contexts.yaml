@@ -15,8 +15,8 @@ jobs:
         echo "Ref: ${{github.run_id}}"
         echo "Ref: ${{github.run_number}}"
         echo "Ref: ${{github.action_ref}}"
-      steps: 
-      - name: Retrieve Variable
-        run:
-          echo: "env.MY_VAR"
+  
+    - name: Retrieve Variable
+      run:
+        echo: "env.MY_VAR"
 
