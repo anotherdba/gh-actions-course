@@ -1,5 +1,5 @@
 name: 06-contexts
-on: workflow_dispatch
+on: push
 
 jobs:
   echo-data:
