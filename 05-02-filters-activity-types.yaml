@@ -1,6 +1,6 @@
 name: 05-02-Event Filters and activity types
 on: 
-  pull_request:
+  workflow_dispatch
     types: [closed]
     branches: 
       - main
