@@ -6,8 +6,9 @@ on:
       debug:
         type: boolean
         default: false
+
 jobs: 
-  echo:
+  echo-data:
     runs-on: ubuntu-latest
     steps:
     - name: [debug] Print start-up data
@@ -28,3 +29,4 @@ jobs:
 
     - name: Greeting
       echo: "Hello, world"
+
