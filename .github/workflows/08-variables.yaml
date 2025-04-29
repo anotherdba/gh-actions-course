@@ -15,16 +15,18 @@ jobs:
       OVERWRITTEN: 'I have beeen overwritten'
     steps: 
       - name: Print Env Variables
-        run: |
+        env:
           STEP_VAR: 'I am a step env var'
           step_var2: 'I am another step var'
+        run: |
+
 
         
-          echo " Step env var: ${{ vars.STEP_VAR }}"
-          echo " Step env var: ${{ vars.step_var2 }}"
+          echo " Step env var: ${{ env.STEP_VAR }}"
+          echo " Step env var: ${{ env.step_var2 }}"
 
-          echo " Step env var: ${{ vars.JOB_VAR }}"
-          echo " Step env var: ${{ vars.OVERWRITTEN }}"
+          echo " Step env var: ${{ env.JOB_VAR }}"
+          echo " Step env var: ${{ env.OVERWRITTEN }}"
 
-          echo " Step env var: ${{ vars.WORKFLOW_VAR }}"
-          echo " Step env var: ${{ vars.OVERWRITTEN }}"
+          echo " Step env var: ${{ env.WORKFLOW_VAR }}"
+          echo " Step env var: ${{ env.OVERWRITTEN }}"
