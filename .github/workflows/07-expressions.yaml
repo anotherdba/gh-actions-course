@@ -8,25 +8,25 @@ on:
         default: false
 
 jobs: 
-  echo-data:
+  echo:
     runs-on: ubuntu-latest
     steps:
       - name: '[debug] Print start-up data'
         if: ${{ inputs.debug }}
         run: |
           echo "Triggered by: ${{ github.event_name }}"
-          echo "Triggered by: ${{ github.branch}}"
-          echo "Triggered by: ${{ github.sha }}"
-          echo "Triggered by: ${{ runner.os }}"
+          echo "Branch: ${{ github.ref}}"
+          echo "sha : ${{ github.sha }}"
+          echo "runner OS : ${{ runner.os }}"
 
       - name: '[debug] Print when Triggered from main'
-        if: ${{ inputs.debug }}  and ${{ github.ref == "/ref/heads/main" }}
+        if: ${{ inputs.debug  &&  github.ref == '/ref/heads/main' }}
         run: |
-          echo "Triggered by: ${{ github.event_name }}"
-          echo "Triggered by: ${{ github.branch}}"
-          echo "Triggered by: ${{ github.sha }}"
-          echo "Triggered by: ${{ runner.os }}"
+          echo "Event Name: ${{ github.event_name }}"
+          echo "Ref: ${{ github.branch}}"
+          echo "sha: ${{ github.sha }}"
+          echo "OS : ${{ runner.os }}"
 
       - name: Greeting
-        echo: "Hello, world"
+        run: echo "Hello, world"
 
