@@ -34,6 +34,3 @@ jobs:
       - name: Greeting
         run: echo "Hello, world"
 
-
-
-      run: echo ${{ expression && truthy_value || falsy_value }}
