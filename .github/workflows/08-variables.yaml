@@ -1,5 +1,8 @@
 name: 08 - Using variables
-on: push
+on: 
+  push:
+  workflow_dispatch:
+
 env:
   WORKFLOW_VAR: 'I am a workflow env'
   OVERWRITTEN: 'I will be overwritten'
@@ -12,8 +15,9 @@ jobs:
       OVERWRITTEN: 'I have beeen overwritten'
     steps: 
       - name: Print Env Variables
-        STEP_VAR: 'I am a step env var'
-        step_var2: 'I am another step var'
+        run: |
+          STEP_VAR: 'I am a step env var'
+          step_var2: 'I am another step var'
 
         run: |
           echo " Step env var: ${{ vars.STEP_VAR }}"
