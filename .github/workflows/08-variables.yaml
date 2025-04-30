@@ -51,3 +51,11 @@ jobs:
           echo "Org var:${{ vars.REPOSITORAY_VAR }}"
 
 
+  
+  echo-undefined
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Print undefined Variables
+        run: |
+          echo "Org var:${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
