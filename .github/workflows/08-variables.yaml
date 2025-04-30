@@ -50,21 +50,4 @@ jobs:
           echo "Org var:${{ vars.OVERWRITTEN_VAR }}"
           echo "Org var:${{ vars.REPOSITORAY_VAR }}"
 
-  echo-prod
-    runs-on: ubuntu-latest
-    environment: prod
-    steps:
-      - name: Print PROD Variables
-        run: |
-          echo "Org var:${{ vars.ORG_VAR }}"
-          echo "Org var:${{ vars.OVERWRITTEN_VAR }}"
-          echo "Org var:${{ vars.REPOSITORAY_VAR }}"
-          echo "Environment var:${{ vars.TARGET_VAR }}"
-  
-  echo-undefined
-    runs-on: ubuntu-latest
-    environment: staging
-    steps:
-      - name: Print undefined Variables
-        run: |
-          echo "Org var:${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
+
