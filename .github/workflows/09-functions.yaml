@@ -9,6 +9,13 @@ jobs:
 
 
     steps:
+      - name: Print PR title
+        run: echo The Title of your PR is ${{ github.event.pull_request.title }}
+      - name: Print PR labels
+        run: echo PR Label is {{ github.event.pull_request.labels }}
+      - name: Bug step
+        if: ${{ failure() }}
+        run: echo "I am a bug fix"
       - name: Sleep for 20 seconds
         run: sleep 20
       - name: Failing step
