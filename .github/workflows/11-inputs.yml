@@ -31,6 +31,5 @@ jobs:
     if: ${{ inputs.dry-run == 'false'}}
     steps:
       - name: Deploy
-        environment: ${{ inputs.target }}
         run: echo "Deploying to ${{ inputs.target }}"
 
