@@ -20,7 +20,7 @@ jobs:
       - name: build
         id: build
         run: |
-          echo "$GITHUB_OUTPUT
+          echo "$GITHUB_OUTPUT"
           echo "status=${{ inputs.build-status }}"    >> "$GITHUB_OUTPUT"
 
 
