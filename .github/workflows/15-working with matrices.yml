@@ -6,21 +6,21 @@ on:
 jobs:
   backwards-compatibility:
     runs-on: ubuntu-latest
-    name: ${{ matrix.os }}- ${{ matrix.node }}
+    name: ${{ matrix.os }}- ${{ matrix.node-version }}
     strategy:
       matrix:
-        node: [18, 20, 21]
+        node-version: [18.x, 20.x, 21.x]
         os: 
           - ubuntu-latest
           - windows-latest
     
     steps:
       - name: Setup node
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
+         ${{ matrix.node-version }}
       - name: Peform some tests
-        run: echo "Running tests on OS ${{ matrix.node }} and NodeJS ${{ matrix.node }}"
+        run: echo "Running tests on OS ${{ matrix.os }} and NodeJS ${{ matrix.node-version }}"
 
 
 
