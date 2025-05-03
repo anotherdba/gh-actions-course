@@ -11,9 +11,10 @@ on:
         description: "Which environment the workflow will target"
       tag:
         type: choice
-          - v1
-          - v2
-          - v3
+        options:
+        - v1
+        - v2
+        - v3
         default: "Release from which to build and deploy"
 
 jobs:
@@ -36,5 +37,20 @@ jobs:
 
 
 
-      
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment      
  
