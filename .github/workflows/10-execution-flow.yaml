@@ -4,46 +4,47 @@ on:
     inputs:
       pass-unit-tests:
         type: boolean
-        default: false
+        default: true
+
   jobs:
     lint-build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Lint and build
-        run: echo "linting and building project"
+      runs-on: ubuntu-latest
+      steps:
+        - name: Lint and build
+          run: echo "linting and building project"
       
     unit-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Runing unit tests
-        run: echo "Running tests"
-      - name: Failing tests
-        if: ${{ inputs.pass-unit-tests}} == false
-        exit 1
+      runs-on: ubuntu-latest
+      steps:
+        - name: Runing unit tests
+          run: echo "Running tests"
+        - name: Failing tests
+          if: ${{ !inputs.pass-unit-tests}} == false
+          run: exit 1
     
     deploy-nonprod:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to non-prod
-        run: echo "Deploying to nonprod...."
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to non-prod
+          run: echo "Deploying to nonprod...."
 
     e2e-test2:
-    runs-on: ubuntu-latest
-      needs: deploy-nonprod
-      - name: Running E2E tests
-        run: echo "Running E2E tests"
+      runs-on: ubuntu-latest
+        needs: deploy-nonprod
+        - name: Running E2E tests
+          run: echo "Running E2E tests"
 
     load-tests:
-    runs-on: ubuntu-latest
-      needs: deploy-nonprod
-      - name: Running load tests
-        run: echo "Running load tests"
+      runs-on: ubuntu-latest
+        needs: deploy-nonprod
+        - name: Running load tests
+          run: echo "Running load tests"
 
 
     deploy-prod:
-    runs-on: ubuntu-latest
-      needs: [e2e-tests,load-tests]
-      - name: Deploying to PROD
-        run: echo "Deploying to PROD..."
+      runs-on: ubuntu-latest
+        needs: [e2e-tests,load-tests]
+        - name: Deploying to PROD
+          run: echo "Deploying to PROD..."
 
 
