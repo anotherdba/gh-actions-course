@@ -1,15 +1,11 @@
 name: 21 - working with environments
-run-name: "16 - working with Environments | env - ${{ inputs.targets-env }}"
+run-name: "16 - working with Environments | env - ${{ inputs.target-env }}"
 
 on:
   workflow_dispatch:
     inputs:
-      targets-env:
+      target-env:
         type: environment
-        options:
-          - dev
-          - qa
-          - staging
         default: staging
     
 
@@ -23,7 +19,7 @@ jobs:
     steps:
       - name: Echo vars
         run: |
-          echo "environment= ${{ inputs.targets-env }}"
+          echo "environment= ${{ inputs.target-env }}"
           echo "my-env-value= ${{ env.MY_ENV_VALUE}} "
 
 
