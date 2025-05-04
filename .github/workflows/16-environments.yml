@@ -1,5 +1,5 @@
 name: 21 - working with environments
-run-name: "16 - working with Environments | env - ${{ targets-env.inputs }}"
+run-name: "16 - working with Environments | env - ${{ inputs.targets-env }}"
 
 on:
   workflow_dispatch:
