@@ -1,0 +1,28 @@
+name: 21 - working with environments
+run-name: "16 - working with Environments | env - ${{ targets-env.inputs }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets-env:
+        type: environment
+        options:
+          - dev
+          - qa
+          - staging
+        default: staging
+    
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Echo vars
+        run: |
+          echo "environment= ${{ inputs.targets-env }}"
+          echo "my-env-value= ${{ vars.MY_ENV_VALUE}} "
+
+
+
+
