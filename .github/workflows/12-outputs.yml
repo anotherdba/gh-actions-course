@@ -41,3 +41,8 @@ jobs:
     steps:
       - name: Deploy based on build result
         run: echo "Deploying application..."
+      - name: Step with mistake
+        run: |
+          echo "This step has a mistake"
+          echo "ouptut2=value2" >> "$GITHUB_OUTPUT"
+          cat "GITHUB_OUTPUT"
