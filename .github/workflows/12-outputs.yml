@@ -34,6 +34,4 @@ jobs:
     if: ${{ needs.build.outputs.build-status == 'success' }}
     steps:
       - name: Deploy based on build result
-        run: |
-          
-            echo "Deploying application..."
+        run: echo "Deploying application..."
