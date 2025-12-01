@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      build-status: ${{ steps.build.outputs.status }}
     steps:
       - name: Print "$GITHUB_OUTPUT" path
         run: echo $GITHUB_OUTPUT
@@ -29,11 +31,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    if: ${{ needs.build.outputs.build-status == 'success' }}
     steps:
       - name: Deploy based on build result
         run: |
-          if [ "${{ inputs.build-status }}" == "success" ]; then
+          
             echo "Deploying application..."
-          else
-            echo "Skipping deployment due to build failure."
-          fi
