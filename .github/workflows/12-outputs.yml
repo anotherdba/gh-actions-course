@@ -21,6 +21,8 @@ jobs:
         run: |
               echo " status=${{ inputs.build-status }}" >> "$GITHUB_OUTPUT"
               echo "Github Output Path: $GITHUB_OUTPUT"
+              echo "---- File contents ----"
+              cat "$GITHUB_OUTPUT"
 
 
 
