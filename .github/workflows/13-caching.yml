@@ -22,7 +22,7 @@ jobs:
         if: ${{ inputs.use-cache }}
         id: cache
         with:
-          path: node_modules
+          path: 13-caching/react-app/node_modules
           key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
 
       - name: Set up Node.js
