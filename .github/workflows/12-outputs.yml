@@ -19,9 +19,8 @@ jobs:
         id: build
       
         run: |
-            echo "$GITHUB_OUTPUT"   >> "$GITHUB_OUTPUT"
-            echo " status=${{ inputs.build-status }}" >> "$GITHUB_OUTPUT"
-            echo "Github Output Path: $GITHUB_OUTPUT"
+              echo " status=${{ inputs.build-status }}" >> "$GITHUB_OUTPUT"
+              echo "Github Output Path: $GITHUB_OUTPUT"
 
 
 
