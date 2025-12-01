@@ -45,4 +45,4 @@ jobs:
         run: |
           echo "This step has a mistake"
           echo "ouptut2=value2" >> "$GITHUB_OUTPUT"
-          cat "GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
